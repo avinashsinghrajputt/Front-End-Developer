@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div onmouseout="counting()" class="container">
+        <img src="pcs.jpg" width="300" height="300" onmousemove="counting()">
+    </div>
+    <form action="">
+        <!-- <input type="text" id="text" onfocus="key()" onblur="onBlur()"> -->
+    </form>
+    <form onsubmit="return(onSubmit())">
+        <input type="text" id="text" onblur="key()"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        // var count = 0;
+        // function counting() {
+        //     count++;
+        //     console.log(count);
+        // }
+        //   function genle(){
+        //     alert("you have clicked in image");
+        // }
+        function key(){
+            document.getElementById("text").style.backgroundColor="red";
+        }
+        function onBlur(){
+            document.getElementById("text").style.backgroundColor="blue";
+        }
+        function onSubmit(){
+            if(document.getElementById("text").value==""){
+                alert(document.getElementById("text").innerHTML ="GOD");
+            }
+            else{
+                alert("Form is Submitted");S
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        #demo {
+            font-size: 80px;
+            color: blue;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <p id="demo"></p>
+    <script>
+        var i;
+        function start() {
+            i = setInterval(datetime, 1000);
+        }
+        function datetime() {
+            var now = new Date();
+            var hours = String(now.getHours()).padStart(2, '0');
+            var minutes = String(now.getMinutes()).padStart(2, '0');
+            var seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById("demo").innerHTML = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("demo").style.cssText = "font-size: 80px; color: blue; font-style: italic";
+        }
+        function stop() {
+            clearInterval(i);
+        }
+    </script>
+</body>
+</html>
