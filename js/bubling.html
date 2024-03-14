@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 5px solid black;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+    </div>
+    <script>
+        var parentDiv = document.getElementById('parent');
+        var child1Div = document.createElement('div');
+        child1Div.setAttribute('id', 'child1');
+        var child2Div = document.createElement('div');
+        child2Div.setAttribute('id', 'child2');
+        child1Div.appendChild(child2Div);
+        parentDiv.appendChild(child1Div);
+
+        function par(){
+            parentDiv.style.border = "15px solid green";
+            parentDiv.style.transform='rotate(360deg)';
+            parentDiv.style.transition='2s';
+        }
+        function ch1(){
+            child1Div.style.border = "15px solid yellow";
+            child1Div.style.transform='rotate(360deg)';
+            child1div.style.transition='2s';
+        }
+        function ch2(){
+            child2Div.style.border = "15px solid red";
+            child2Div.style.transform='rotate(360deg)';
+            child2Div.style.transition='2s';
+        }
+        
+        parentDiv.addEventListener("mouseover",par,true);
+        child1Div.addEventListener("mouseover",ch1,true);
+        child2Div.addEventListener("mouseover",ch2,true);
+    </script>
+</body>
+</html>
